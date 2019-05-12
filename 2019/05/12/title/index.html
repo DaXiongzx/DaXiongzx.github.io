@@ -88,10 +88,14 @@
 <meta property="og:site_name" content="四季了然">
 <meta property="og:description" content="Java中使用IO（输入输出）来读取和写入，读写设备上的数据、硬盘文件、内存键盘。根据数据的走向分为输入流和输出流，这个走向以内存为基准，往内存中读取为输入流，从内存中读出为输出流。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-12T09:30:55.067Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/DaXiongzx/Images/master/%E5%B8%B8%E7%94%A8%E6%B5%81%E7%B1%BB.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DaXiongzx/Images/master/%E7%B1%BB%E9%97%B4%E8%81%94%E7%B3%BB.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/DaXiongzx/Images/master/%E5%AD%97%E7%AC%A6%E6%B5%81.png">
+<meta property="og:updated_time" content="2019-05-12T10:31:17.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java io">
 <meta name="twitter:description" content="Java中使用IO（输入输出）来读取和写入，读写设备上的数据、硬盘文件、内存键盘。根据数据的走向分为输入流和输出流，这个走向以内存为基准，往内存中读取为输入流，从内存中读出为输出流。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/DaXiongzx/Images/master/%E5%B8%B8%E7%94%A8%E6%B5%81%E7%B1%BB.png">
 
 
 
@@ -307,7 +311,62 @@
 <p>Java IO可以分为两类，<strong><em>字节流操作类（inputstream/outputstream）和字符流操作类（reader/writer）</em></strong></p>
 <p>字节流以8位作为一个数据单元（1byte,8bit)<br>字符流以16位作为一个数据单元（2byte,16bit)</p>
 <p>1.字节流可以处理所有数据类型的数据，在java中以Stream结尾。<br>2.字符流处理文本数据，在java中以Reader和Writer结尾,由于一个汉字占两个字节，所以产生了字符流</p>
-<p>![常用流类]（E:\myblog\Images\常用流类.png “常用流类”）<br>![常用流类](<a href="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/" target="_blank" rel="noopener">https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/</a><br>u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg “区块链”)</p>
+<p><img src="https://raw.githubusercontent.com/DaXiongzx/Images/master/%E5%B8%B8%E7%94%A8%E6%B5%81%E7%B1%BB.png" alt="流库" title="流库"></p>
+<p>以上四个基类提供的部分通用的读和写方法如下：</p>
+<p>int read()-返回的是单个字节数据（字节数据可以直接专程int类型)<br>int read(byte[] buf)-返回的是读取到的字节数，真正的数据保存在buf中<br>void write(int c)- c既可以是政府，也可以是字节<br>void write(byte[] buf  或者 char[] buf)<br>void  write(String str) - Writer专用</p>
+<h2 id><a href="#" class="headerlink" title></a><img src="https://raw.githubusercontent.com/DaXiongzx/Images/master/%E7%B1%BB%E9%97%B4%E8%81%94%E7%B3%BB.png" alt="基于字节流" title="字节流库"></h2><h2 id="-1"><a href="#-1" class="headerlink" title></a><img src="https://raw.githubusercontent.com/DaXiongzx/Images/master/%E5%AD%97%E7%AC%A6%E6%B5%81.png" alt="基于字符流" title="字符流库"></h2><p>1.文件操作（创建文件和文件夹，查看文件）<br>//创建一个文件路径<br>File file = new File(“D:\testData.txt”);<br>if(file.exists()){<br>//得到文件路径<br>System.out.println(file.getAbsolutePath());<br>//得到文件大小<br>System.out.println(“文件大小：”+file.length());<br>}
+//创建文件和创建文件夹<br>File file1 = new File(“d:\iotest.txt”);<br>if(!file1.exists())<br>{
+    try {<br>        file1.createNewFile();<br>    } catch (IOException e) {<br>        // TODO Auto-generated catch block<br>        e.printStackTrace();<br>    }<br>}else{<br>    System.out.println(“文件已存在”);<br>}
+//创建文件夹<br>File file2 = new File(“d:\testIO”);<br>if(file2.isDirectory())<br>{
+    System.out.println(“文件夹存在”);<br>}else{<br>    file2.mkdir();<br>}</p>
+<p>//列出一个文件夹下的所有文件<br>File f = new File(“d:\testIO”);<br>if(f.isDirectory())<br>{
+    File lists[] = f.listFiles();<br>    for(int i=0;i&lt;lists.length;i++)<br>    {<br>        System.out.println(lists[i].getName());<br>    }<br>}</p>
+<hr>
+<p>常用字节流FileInputStream和FileOutputStream:<br>FileInputStream：<br>FileInputStream fis = null;<br>        try {<br>            fis = new FileInputStream(“D:\testData.txt”);<br>            byte bytes[]=new byte[1024];<br>            int n=0;<br>            while((n=fis.read(bytes))!= -1){<br>                String str = new String(bytes,0,n);<br>                System.out.print(str);<br>            }<br>        } catch (Exception e) {<br>            e.printStackTrace();<br>        } finally{<br>            try {<br>                fis.close();<br>            } catch (IOException e) {<br>                e.printStackTrace();<br>            }<br>        }</p>
+<hr>
+<p>FileOutputStream:<br>    FileOutputStream fos = null;<br>        try {<br>            fos = new FileOutputStream(“D:\testData.txt”);<br>            String str = “报效国家，舍生忘死”;<br>            byte bytes[] = str.getBytes();<br>            fos.write(bytes);<br>        } catch (Exception e) {<br>            e.printStackTrace();<br>        } finally {<br>            try {<br>                fos.close();<br>            } catch (Exception e2) {<br>                e2.printStackTrace();<br>            }<br>        }</p>
+<hr>
+<p>字符流FileReader和FileWriter:<br>    //字符流<br>        //文件写出  输入流<br>        FileReader freader = null;<br>        //写入到文件  输出流<br>        FileWriter fwriter = null;<br>        try {<br>            创建输入对象<br>            freader = new FileReader(“d:\testData.txt”);<br>            //创建输出对象<br>            File f1 = new File(“e:\testData.txt”);<br>            if(!f1.exists()){<br>                f1.createNewFile();<br>            }<br>            fwriter = new FileWriter(f1);</p>
+<pre><code>    读入到内存
+    char chars[] = new char[1024];
+    int n=0;
+    while((n=freader.read(chars))!= -1)
+    {
+        fwriter.write(chars);
+        System.out.println(chars);
+    }
+
+
+
+} catch (Exception e) {
+    e.printStackTrace();
+    // TODO: handle exception
+}finally{
+    try{
+    freader.close();
+    fwriter.close();
+    }catch(Exception e){
+        e.printStackTrace();
+    }
+}
+
+//缓冲字符流  bufferedReader  bufferedWriter
+BufferedReader bfreader = null;
+try {
+    FileReader freader = new FileReader(&quot;d:\\testData.txt&quot;);
+    bfreader = new BufferedReader(freader);
+    //循环读取
+    String s =&quot;&quot;;
+    while((s=bfreader.readLine())!= null)
+    {
+        System.out.println(s);
+    }
+} catch (Exception e) {
+    // TODO: handle exception
+}</code></pre><p><strong><em>代码转自：<a href="https://www.cnblogs.com/dreamyu/p/6551137.html" target="_blank" rel="noopener">https://www.cnblogs.com/dreamyu/p/6551137.html</a></em></strong></p>
+<hr>
+<p>可能有很多同学对于缓冲区不太懂，其实缓冲区就是用来暂存数据的区域。比如说摘一百个苹果并且运送出去，缓冲区的意思是当摘满了十个苹果后，用一个袋子装起来（袋子就相当于缓冲区），当装满时，再去运送。而一般无缓冲区的情况则是摘一个送一个得跑一百趟。。。而用袋子只需要跑十趟<del>~ 
+BufferedReader bfread=new BufferedReader(new FileReader(filepath)) 其中filepath是你要进行io操作的路径，可为绝对路径或者相对路径（不懂这两种路径的同学自行百度</del>）</p>
 
       
     </div>
@@ -392,8 +451,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -442,6 +510,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
