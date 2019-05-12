@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>四季了然</title>
+  
+  <subtitle>路漫漫其修远兮</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-05-12T09:30:55.067Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Shaw</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java io</title>
+    <link href="http://yoursite.com/2019/05/12/title/"/>
+    <id>http://yoursite.com/2019/05/12/title/</id>
+    <published>2019-05-12T09:20:30.000Z</published>
+    <updated>2019-05-12T09:30:55.067Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>Java中使用IO（输入输出）来读取和写入</em>，读写设备上的数据、硬盘文件、内存键盘。根据数据的走向分为输入流和输出流，这个走向以内存为基准，往内存中读取为输入流，从内存中读出为输出流。</p><a id="more"></a><p>Java IO可以分为两类，<strong><em>字节流操作类（inputstream/outputstream）和字符流操作类（reader/writer）</em></strong></p><p>字节流以8位作为一个数据单元（1byte,8bit)<br>字符流以16位作为一个数据单元（2byte,16bit)</p><p>1.字节流可以处理所有数据类型的数据，在java中以Stream结尾。<br>2.字符流处理文本数据，在java中以Reader和Writer结尾,由于一个汉字占两个字节，所以产生了字符流</p><p>![常用流类]（E:\myblog\Images\常用流类.png “常用流类”）<br>![常用流类](<a href="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/" target="_blank" rel="noopener">https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/</a><br>u=702257389,1274025419&amp;fm=27&amp;gp=0.jpg “区块链”)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;Java中使用IO（输入输出）来读取和写入&lt;/em&gt;，读写设备上的数据、硬盘文件、内存键盘。根据数据的走向分为输入流和输出流，这个走向以内存为基准，往内存中读取为输入流，从内存中读出为输出流。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/04/23/hello-world/"/>
+    <id>http://yoursite.com/2019/04/23/hello-world/</id>
+    <published>2019-04-23T15:06:06.854Z</published>
+    <updated>2019-04-27T05:29:17.286Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
