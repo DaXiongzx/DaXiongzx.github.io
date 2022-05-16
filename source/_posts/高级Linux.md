@@ -1,11 +1,9 @@
 ---
 title: 高级Linux
-
+description: Nju高级Linux期末复习大全
 ---
 
 # 高级linux
-
-Quickly create a rich document.
 
 # 第一章 发行版、组成、内核版本
 
