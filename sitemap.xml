@@ -4,39 +4,34 @@
   <url>
     <loc>http://example.com/categories/index.html</loc>
     
-    <lastmod>2022-05-16</lastmod>
+    <lastmod>2022-05-16T05:10:26.495Z</lastmod>
     
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <date>1652677423000</date>
+    <title>categories | DaXiong</title>
+    
+    <desc></desc>
   </url>
   
   <url>
     <loc>http://example.com/linux/%E9%AB%98%E7%BA%A7Linux.html</loc>
     
-    <lastmod>2022-05-16</lastmod>
+    <lastmod>2022-05-16T04:41:22.059Z</lastmod>
     
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <date>1652697505402</date>
+    <title>高级Linux | DaXiong</title>
+    
+    <desc></desc>
   </url>
   
   <url>
     <loc>http://example.com/2022/05/16/hello-world/</loc>
     
-    <lastmod>2022-05-16</lastmod>
+    <lastmod>2022-05-16T03:18:23.939Z</lastmod>
     
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <date>1652671103939</date>
+    <title>Hello World | DaXiong</title>
+    
+    <desc></desc>
   </url>
-  
-
-  <url>
-    <loc>http://example.com/</loc>
-    <lastmod>2022-05-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  
-
   
 </urlset>
