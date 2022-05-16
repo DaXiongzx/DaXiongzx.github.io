@@ -13,11 +13,22 @@
   </url>
   
   <url>
-    <loc>http://example.com/linux/%E9%AB%98%E7%BA%A7Linux.html</loc>
+    <loc>http://example.com/2022/05/16/%E9%AB%98%E7%BA%A7Linux/</loc>
     
     <lastmod>2022-05-16T04:41:22.059Z</lastmod>
     
-    <date>1652697505402</date>
+    <date>1652704003806</date>
+    <title>高级Linux | DaXiong</title>
+    
+    <desc></desc>
+  </url>
+  
+  <url>
+    <loc>http://example.com/linux/index.html</loc>
+    
+    <lastmod>2022-05-16T04:41:22.059Z</lastmod>
+    
+    <date>1652704677805</date>
     <title>高级Linux | DaXiong</title>
     
     <desc></desc>
