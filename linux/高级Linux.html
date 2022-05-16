@@ -624,12 +624,12 @@
 <p>DenyUser lisi</p>
 <p>之后执行命令：systemctl  start sshd.service       systemctl enable sshd.service</p>
 <h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><p>ssh -l zhangsan 192.168.0.100(以用户zhangsan登录到IP地址。。。。）</p>
-<p>ssh <a href="mailto:&#x72;&#111;&#x6f;&#116;&#x40;&#x31;&#57;&#x32;&#46;&#49;&#54;&#x38;&#x2e;&#48;&#46;&#49;&#48;&#x30;">&#x72;&#111;&#x6f;&#116;&#x40;&#x31;&#57;&#x32;&#46;&#49;&#54;&#x38;&#x2e;&#48;&#46;&#49;&#48;&#x30;</a>  ls &#x2F;boot  (以 root 连接主机 192.168.0.100 ，并执行 ls &#x2F;boot 命令。)</p>
+<p>ssh <a href="mailto:&#114;&#x6f;&#x6f;&#116;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#48;&#46;&#49;&#48;&#x30;">&#114;&#x6f;&#x6f;&#116;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#48;&#46;&#49;&#48;&#x30;</a>  ls &#x2F;boot  (以 root 连接主机 192.168.0.100 ，并执行 ls &#x2F;boot 命令。)</p>
 <h3 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h3><p>使用 scp 命令可以用来通过安全、加密的连接在不同主机之间传输文件</p>
 <p>scp [选项 ] [用户 主机 1:] 文件 1 [[ 用户 主机 2:] 文件 2</p>
-<p>scp &#x2F;root&#x2F;a  <a href="mailto:&#x72;&#111;&#111;&#116;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#x36;&#56;&#46;&#48;&#46;&#49;&#48;&#48;">&#x72;&#111;&#111;&#116;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#x36;&#56;&#46;&#48;&#46;&#49;&#48;&#48;</a>:&#x2F;root&#x2F;b  (用 root 账号把本地文件 root&#x2F;a 传送到 192.168.0.100 远程主机下的&#x2F;root 下，并改名为 b )</p>
-<p>scp &#x2F;ab&#x2F;*   <a href="mailto:&#x72;&#111;&#111;&#x74;&#64;&#49;&#x39;&#50;&#46;&#49;&#54;&#x38;&#x2e;&#48;&#x2e;&#49;&#x30;&#x30;">&#x72;&#111;&#111;&#x74;&#64;&#49;&#x39;&#50;&#46;&#49;&#54;&#x38;&#x2e;&#48;&#x2e;&#49;&#x30;&#x30;</a>:&#x2F;root    用 root 账号把本地 &#x2F;ab 目录下所有文件传送到 192.168.0.100远程主机的&#x2F;root 目录。</p>
-<p>scp <a href="mailto:&#114;&#111;&#111;&#x74;&#x40;&#x31;&#x39;&#x32;&#46;&#49;&#x36;&#x38;&#x2e;&#48;&#x2e;&#49;&#48;&#48;">&#114;&#111;&#111;&#x74;&#x40;&#x31;&#x39;&#x32;&#46;&#49;&#x36;&#x38;&#x2e;&#48;&#x2e;&#49;&#48;&#48;</a>:&#x2F;root&#x2F;abc  &#x2F;root&#x2F;a   用 root 账号把远程主机 192.168.0.100 上的文件 &#x2F;root&#x2F;abc 传送到本地主机&#x2F;root 目录下，并改名为 a</p>
+<p>scp &#x2F;root&#x2F;a  <a href="mailto:&#x72;&#x6f;&#x6f;&#116;&#64;&#49;&#57;&#50;&#46;&#49;&#54;&#56;&#x2e;&#48;&#x2e;&#49;&#48;&#x30;">&#x72;&#x6f;&#x6f;&#116;&#64;&#49;&#57;&#50;&#46;&#49;&#54;&#56;&#x2e;&#48;&#x2e;&#49;&#48;&#x30;</a>:&#x2F;root&#x2F;b  (用 root 账号把本地文件 root&#x2F;a 传送到 192.168.0.100 远程主机下的&#x2F;root 下，并改名为 b )</p>
+<p>scp &#x2F;ab&#x2F;*   <a href="mailto:&#114;&#111;&#111;&#x74;&#64;&#x31;&#57;&#x32;&#x2e;&#49;&#54;&#x38;&#x2e;&#x30;&#46;&#49;&#x30;&#x30;">&#114;&#111;&#111;&#x74;&#64;&#x31;&#57;&#x32;&#x2e;&#49;&#54;&#x38;&#x2e;&#x30;&#46;&#49;&#x30;&#x30;</a>:&#x2F;root    用 root 账号把本地 &#x2F;ab 目录下所有文件传送到 192.168.0.100远程主机的&#x2F;root 目录。</p>
+<p>scp <a href="mailto:&#114;&#x6f;&#111;&#116;&#x40;&#49;&#57;&#50;&#46;&#49;&#x36;&#56;&#x2e;&#48;&#46;&#49;&#x30;&#48;">&#114;&#x6f;&#111;&#116;&#x40;&#49;&#57;&#50;&#46;&#49;&#x36;&#56;&#x2e;&#48;&#46;&#49;&#x30;&#48;</a>:&#x2F;root&#x2F;abc  &#x2F;root&#x2F;a   用 root 账号把远程主机 192.168.0.100 上的文件 &#x2F;root&#x2F;abc 传送到本地主机&#x2F;root 目录下，并改名为 a</p>
 <h3 id="VNC服务配置"><a href="#VNC服务配置" class="headerlink" title="VNC服务配置"></a>VNC服务配置</h3><p>虚拟网络连接（VNC),允许用户在网络的任何地方使用简单的程序来和一个特定的计算机（服务器）进行交互。</p>
 <h3 id="vnc软件组成部分：服务端的VNC-server和客户端的VNC-viewer。（13-2）"><a href="#vnc软件组成部分：服务端的VNC-server和客户端的VNC-viewer。（13-2）" class="headerlink" title="vnc软件组成部分：服务端的VNC server和客户端的VNC viewer。（13-2）"></a>vnc软件组成部分：服务端的VNC server和客户端的VNC viewer。（13-2）</h3><h3 id="创建或更改VNC登录密码"><a href="#创建或更改VNC登录密码" class="headerlink" title="创建或更改VNC登录密码"></a>创建或更改VNC登录密码</h3><p>vncpasswd [密码文件]<br>vncpasswd [选项]</p>
 <p>创建或更改VNC登录密码</p>
@@ -708,7 +708,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"DaXiongzx","repo":"DaXiongzx.github.io","client_id":"b5f2cbff030adefee033","client_secret":"fe7a79382e1ddff84e5f2ac2ba9415b14571ed29","admin_user":"DaXiongzx","distraction_free_mode":true,"proxy":"https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e614e91aa70a0f6ac3c48ee8a38a5c36"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"DaXiongzx","repo":"DaXiongzx.github.io","client_id":"b5f2cbff030adefee033","client_secret":"fe7a79382e1ddff84e5f2ac2ba9415b14571ed29","admin_user":"DaXiongzx","distraction_free_mode":true,"proxy":"https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e614e91aa70a0f6ac3c48ee8a38a5c36"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
