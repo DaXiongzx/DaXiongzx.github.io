@@ -1,6 +1,10 @@
 ---
 title: 高级Linux
 description: Nju高级Linux期末复习大全
+categories: Linux
+tags:
+- 硕士
+- Linux
 ---
 
 # 高级linux
