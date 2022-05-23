@@ -6,4 +6,4 @@ tags:
 - DeepLearning
 ---
 
-![image-20220523215142129](E:\Blog\themes\next\source\images\image-20220523215142129.png)
+![image-20220523215142129](E:\Blog\images\image-20220523215142129.png)
