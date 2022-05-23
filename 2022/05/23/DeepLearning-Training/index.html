@@ -20,23 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="DaXiong">
-<meta property="og:url" content="http://example.com/tags/Leetcode/index.html">
+    <meta name="description" content="李宏毅DeepLearning Loss Function比较">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DeepLearning">
+<meta property="og:url" content="http://example.com/2022/05/23/DeepLearning-Training/index.html">
 <meta property="og:site_name" content="DaXiong">
+<meta property="og:description" content="李宏毅DeepLearning Loss Function比较">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-23T06:14:57.135Z">
+<meta property="article:modified_time" content="2022-05-23T06:21:33.560Z">
 <meta property="article:author" content="Xiao Zhang">
+<meta property="article:tag" content="DeepLearning">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/tags/Leetcode/">
+<link rel="canonical" href="http://example.com/2022/05/23/DeepLearning-Training/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/Leetcode/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/23/DeepLearning-Training/","path":"2022/05/23/DeepLearning-Training/","title":"DeepLearning"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: Leetcode | DaXiong</title>
+<title>DeepLearning | DaXiong</title>
   
 
 
@@ -125,7 +130,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -138,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%84%E7%A7%8DLoss-function%E6%AF%94%E8%BE%83"><span class="nav-number">1.</span> <span class="nav-text">各种Loss function比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SDG"><span class="nav-number">1.1.</span> <span class="nav-text">SDG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SDGM-Optimize"><span class="nav-number">1.2.</span> <span class="nav-text">SDGM:Optimize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adagrad"><span class="nav-number">1.3.</span> <span class="nav-text">Adagrad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMSProp%EF%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">RMSProp：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adam"><span class="nav-number">1.5.</span> <span class="nav-text">Adam</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Batch-normalization"><span class="nav-number">1.6.</span> <span class="nav-text">Batch normalization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Softmax"><span class="nav-number">1.7.</span> <span class="nav-text">Softmax</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,51 +200,141 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">Leetcode
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/23/DeepLearning-Training/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Xiao Zhang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DaXiong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="DeepLearning | DaXiong">
+      <meta itemprop="description" content="李宏毅DeepLearning Loss Function比较">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DeepLearning
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2022-05-23 14:14:57 / 修改时间：14:21:33" itemprop="dateCreated datePublished" datetime="2022-05-23T14:14:57+08:00">2022-05-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/DeepLearning/" itemprop="url" rel="index"><span itemprop="name">DeepLearning</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>667</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">李宏毅DeepLearning Loss Function比较</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="各种Loss-function比较"><a href="#各种Loss-function比较" class="headerlink" title="各种Loss function比较"></a>各种Loss function比较</h2><h3 id="SDG"><a href="#SDG" class="headerlink" title="SDG"></a>SDG</h3><p>最初的梯度下降法</p>
+<h3 id="SDGM-Optimize"><a href="#SDGM-Optimize" class="headerlink" title="SDGM:Optimize"></a>SDGM:Optimize</h3><p>momentum:考虑上一次的移动方向，此次移动方向为梯度与上次移动方向的加权和（即考虑了历史梯度）。</p>
+<p>Learning rate:随时间变化</p>
+<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><p>Learning rate 的分母：之前梯度平方的和开根号 ，想象一下比较陡（grad较大）的曲线一下子走太大的步子是不是不太好，所以通过控制learning rate的大小 控制步伐的大小。若之前的grad较小，则可以把步子放大点（分母值变小了）。 </p>
+<h3 id="RMSProp："><a href="#RMSProp：" class="headerlink" title="RMSProp："></a>RMSProp：</h3><p>与Adagrad类似，只是分母改成了梯度的加权平方和，参考momentum思想。多了一个hyperparamter:a,可以调a来控制。（a&#x3D;0.1)</p>
+<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><p>SGDM+RMSProp,即将RMSProp的grad改成SGDM的grad项。</p>
+<p><strong>结论：adam训练比较快，但是泛化能力不一定如sdgm。</strong></p>
+<h3 id="Batch-normalization"><a href="#Batch-normalization" class="headerlink" title="Batch normalization"></a>Batch normalization</h3><p>error surface 为椭圆形 —&gt;因为不同参数对应的feature的范围不一样，所以将feature normaliztion，而feature normalization需要多个example（算均值、方差），若example总量为几万个，那么无法一次性读取，所以选择batch，batch_size &#x3D; 64。这样相当于有64个网络分别训练64个examples,之后对每个feature算均值（求和&#x2F;64）</p>
+<h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p>神经网络的最后一层，对每个输出值取e,之后&#x2F;e总和</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-05-17T04:09:08+08:00"
-              content="2022-05-17">
-          05-17
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我喝卡布奇诺</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="Xiao Zhang 微信">
+        <span>微信</span>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/05/17/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" itemprop="url">
-            <span itemprop="name">最长递增子序列</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/DeepLearning/" rel="tag"># DeepLearning</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/17/%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97/" rel="prev" title="最长递增子序列">
+                  <i class="fa fa-chevron-left"></i> 最长递增子序列
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -293,7 +389,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"DaXiongzx","repo":"DaXiongzx.github.io","client_id":"b5f2cbff030adefee033","client_secret":"fe7a79382e1ddff84e5f2ac2ba9415b14571ed29","admin_user":"DaXiongzx","distraction_free_mode":true,"proxy":"https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"724b005da7762d7668d08f25d9a6ffd5"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"DaXiongzx","repo":"DaXiongzx.github.io","client_id":"b5f2cbff030adefee033","client_secret":"fe7a79382e1ddff84e5f2ac2ba9415b14571ed29","admin_user":"DaXiongzx","distraction_free_mode":true,"proxy":"https://shielded-brushlands-08810.herokuapp.com/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"0d211c7be99db7223b6961302ed6e1d7"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
