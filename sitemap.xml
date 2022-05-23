@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/05/23/Backpropagation/</loc>
+    
+    <lastmod>2022-05-23T13:53:31.308Z</lastmod>
+    
+    <date>1653313222858</date>
+    <title>Backpropagation | DaXiong</title>
+    
+    <desc>李宏毅Backpropagation笔记</desc>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/05/23/DeepLearning-Training/</loc>
     
     <lastmod>2022-05-23T06:21:33.560Z</lastmod>
