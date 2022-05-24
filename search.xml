@@ -3,7 +3,43 @@
   <entry>
     <title>Backpropagation</title>
     <url>/2022/05/23/Backpropagation/</url>
-    <content><![CDATA[<p><img src="/2022/05/23/Backpropagation/image-20220523231223136.png" alt="image-20220523231223136"></p>
+    <content><![CDATA[<h2 id="为什么使用BP"><a href="#为什么使用BP" class="headerlink" title="为什么使用BP"></a>为什么使用BP</h2><p>DNN中参数太多，只用Gradient Descent算较慢，所以提出了BP用来快速算出微分</p>
+<p><img src="/2022/05/23/Backpropagation/image-20220524131222838.png" alt="image-20220524131222838"></p>
+<h2 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h2><p><img src="/2022/05/23/Backpropagation/image-20220524132025930.png" alt="image-20220524132025930"></p>
+<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><p>C^n表示的是预测结果和实际结果间的差值</p>
+<p><img src="/2022/05/23/Backpropagation/image-20220524132513761.png" alt="image-20220524132513761"></p>
+<p>由于是累计求和，所以只需要算其中一笔资料的微分即可，最终再求和</p>
+<p><img src="/2022/05/23/Backpropagation/image-20220524133149706.png" alt="image-20220524133149706"></p>
+<h3 id="Forward-Pass"><a href="#Forward-Pass" class="headerlink" title="Forward Pass"></a>Forward Pass</h3><p>某一个神经元z的输出对其中一个参数w的偏微分，就是该参数对应的输入</p>
+<p><img src="/2022/05/23/Backpropagation/image-20220524133554059.png" alt="image-20220524133554059"></p>
+<h3 id="Backward-Pass"><a href="#Backward-Pass" class="headerlink" title="Backward Pass"></a>Backward Pass</h3><p><img src="/2022/05/23/Backpropagation/image-20220524135109134.png" alt="image-20220524135109134"></p>
+<p>下面需要算出C对z^’、z^’‘的微分</p>
+<h4 id="case1-后面直接就output了，没有其它层"><a href="#case1-后面直接就output了，没有其它层" class="headerlink" title="case1:后面直接就output了，没有其它层"></a>case1:后面直接就output了，没有其它层</h4><p><img src="/2022/05/23/Backpropagation/image-20220524135720247.png" alt="image-20220524135720247"></p>
+<h4 id="case2-后面还有其他层，需要一直算到output层"><a href="#case2-后面还有其他层，需要一直算到output层" class="headerlink" title="case2:后面还有其他层，需要一直算到output层"></a>case2:后面还有其他层，需要一直算到output层</h4><p><img src="/2022/05/23/Backpropagation/image-20220524140247841.png" alt="image-20220524140247841"></p>
+<p><img src="/2022/05/23/Backpropagation/image-20220524140722526.png" alt="image-20220524140722526"></p>
+<p>为了算出C对z^’的微分，需要算C对Zb的微分。</p>
+<h5 id="所以逆向整个过程"><a href="#所以逆向整个过程" class="headerlink" title="所以逆向整个过程"></a>所以逆向整个过程</h5><p><img src="/2022/05/23/Backpropagation/image-20220524141134995.png" alt="image-20220524141134995"></p>
+<p>由后往前算微分，相当于将network倒置，先算后面的微分，之后再慢慢往前算微分</p>
+]]></content>
+      <categories>
+        <category>DeepLearning</category>
+      </categories>
+      <tags>
+        <tag>DeepLearning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DeepLearning</title>
+    <url>/2022/05/23/DeepLearning-Training/</url>
+    <content><![CDATA[<h2 id="各种Loss-function比较"><a href="#各种Loss-function比较" class="headerlink" title="各种Loss function比较"></a>各种Loss function比较</h2><h3 id="SDG"><a href="#SDG" class="headerlink" title="SDG"></a>SDG</h3><p>最初的梯度下降法</p>
+<h3 id="SDGM-Optimize"><a href="#SDGM-Optimize" class="headerlink" title="SDGM:Optimize"></a>SDGM:Optimize</h3><p>momentum:考虑上一次的移动方向，此次移动方向为梯度与上次移动方向的加权和（即考虑了历史梯度）。</p>
+<p>Learning rate:随时间变化</p>
+<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><p>Learning rate 的分母：之前梯度平方的和开根号 ，想象一下比较陡（grad较大）的曲线一下子走太大的步子是不是不太好，所以通过控制learning rate的大小 控制步伐的大小。若之前的grad较小，则可以把步子放大点（分母值变小了）。 </p>
+<h3 id="RMSProp："><a href="#RMSProp：" class="headerlink" title="RMSProp："></a>RMSProp：</h3><p>与Adagrad类似，只是分母改成了梯度的加权平方和，参考momentum思想。多了一个hyperparamter:a,可以调a来控制。（a&#x3D;0.1)</p>
+<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><p>SGDM+RMSProp,即将RMSProp的grad改成SGDM的grad项。</p>
+<p><strong>结论：adam训练比较快，但是泛化能力不一定如sdgm。</strong></p>
+<h3 id="Batch-normalization"><a href="#Batch-normalization" class="headerlink" title="Batch normalization"></a>Batch normalization</h3><p>error surface 为椭圆形 —&gt;因为不同参数对应的feature的范围不一样，所以将feature normaliztion，而feature normalization需要多个example（算均值、方差），若example总量为几万个，那么无法一次性读取，所以选择batch，batch_size &#x3D; 64。这样相当于有64个网络分别训练64个examples,之后对每个feature算均值（求和&#x2F;64）</p>
+<h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p>神经网络的最后一层，对每个输出值取e,之后&#x2F;e总和</p>
 ]]></content>
       <categories>
         <category>DeepLearning</category>
@@ -31,26 +67,6 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>DeepLearning</title>
-    <url>/2022/05/23/DeepLearning-Training/</url>
-    <content><![CDATA[<h2 id="各种Loss-function比较"><a href="#各种Loss-function比较" class="headerlink" title="各种Loss function比较"></a>各种Loss function比较</h2><h3 id="SDG"><a href="#SDG" class="headerlink" title="SDG"></a>SDG</h3><p>最初的梯度下降法</p>
-<h3 id="SDGM-Optimize"><a href="#SDGM-Optimize" class="headerlink" title="SDGM:Optimize"></a>SDGM:Optimize</h3><p>momentum:考虑上一次的移动方向，此次移动方向为梯度与上次移动方向的加权和（即考虑了历史梯度）。</p>
-<p>Learning rate:随时间变化</p>
-<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><p>Learning rate 的分母：之前梯度平方的和开根号 ，想象一下比较陡（grad较大）的曲线一下子走太大的步子是不是不太好，所以通过控制learning rate的大小 控制步伐的大小。若之前的grad较小，则可以把步子放大点（分母值变小了）。 </p>
-<h3 id="RMSProp："><a href="#RMSProp：" class="headerlink" title="RMSProp："></a>RMSProp：</h3><p>与Adagrad类似，只是分母改成了梯度的加权平方和，参考momentum思想。多了一个hyperparamter:a,可以调a来控制。（a&#x3D;0.1)</p>
-<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><p>SGDM+RMSProp,即将RMSProp的grad改成SGDM的grad项。</p>
-<p><strong>结论：adam训练比较快，但是泛化能力不一定如sdgm。</strong></p>
-<h3 id="Batch-normalization"><a href="#Batch-normalization" class="headerlink" title="Batch normalization"></a>Batch normalization</h3><p>error surface 为椭圆形 —&gt;因为不同参数对应的feature的范围不一样，所以将feature normaliztion，而feature normalization需要多个example（算均值、方差），若example总量为几万个，那么无法一次性读取，所以选择batch，batch_size &#x3D; 64。这样相当于有64个网络分别训练64个examples,之后对每个feature算均值（求和&#x2F;64）</p>
-<h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p>神经网络的最后一层，对每个输出值取e,之后&#x2F;e总和</p>
-]]></content>
-      <categories>
-        <category>DeepLearning</category>
-      </categories>
-      <tags>
-        <tag>DeepLearning</tag>
-      </tags>
   </entry>
   <entry>
     <title>最长递增子序列</title>
@@ -525,12 +541,12 @@
 <p>DenyUser lisi</p>
 <p>之后执行命令：systemctl  start sshd.service       systemctl enable sshd.service</p>
 <h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><p>ssh -l zhangsan 192.168.0.100(以用户zhangsan登录到IP地址。。。。）</p>
-<p>ssh <a href="mailto:&#114;&#111;&#111;&#116;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#56;&#x2e;&#x30;&#46;&#49;&#48;&#48;">&#114;&#111;&#111;&#116;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#56;&#x2e;&#x30;&#46;&#49;&#48;&#48;</a>  ls &#x2F;boot  (以 root 连接主机 192.168.0.100 ，并执行 ls &#x2F;boot 命令。)</p>
+<p>ssh <a href="mailto:&#114;&#111;&#111;&#x74;&#64;&#x31;&#x39;&#50;&#46;&#49;&#x36;&#x38;&#x2e;&#48;&#x2e;&#x31;&#48;&#x30;">&#114;&#111;&#111;&#x74;&#64;&#x31;&#x39;&#50;&#46;&#49;&#x36;&#x38;&#x2e;&#48;&#x2e;&#x31;&#48;&#x30;</a>  ls &#x2F;boot  (以 root 连接主机 192.168.0.100 ，并执行 ls &#x2F;boot 命令。)</p>
 <h3 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h3><p>使用 scp 命令可以用来通过安全、加密的连接在不同主机之间传输文件</p>
 <p>scp [选项 ] [用户 主机 1:] 文件 1 [[ 用户 主机 2:] 文件 2</p>
-<p>scp &#x2F;root&#x2F;a  <a href="mailto:&#x72;&#x6f;&#x6f;&#x74;&#64;&#49;&#x39;&#50;&#46;&#49;&#x36;&#56;&#x2e;&#48;&#46;&#x31;&#x30;&#48;">&#x72;&#x6f;&#x6f;&#x74;&#64;&#49;&#x39;&#50;&#46;&#49;&#x36;&#56;&#x2e;&#48;&#46;&#x31;&#x30;&#48;</a>:&#x2F;root&#x2F;b  (用 root 账号把本地文件 root&#x2F;a 传送到 192.168.0.100 远程主机下的&#x2F;root 下，并改名为 b )</p>
-<p>scp &#x2F;ab&#x2F;*   <a href="mailto:&#x72;&#x6f;&#x6f;&#x74;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#46;&#48;&#x2e;&#49;&#x30;&#x30;">&#x72;&#x6f;&#x6f;&#x74;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#46;&#48;&#x2e;&#49;&#x30;&#x30;</a>:&#x2F;root    用 root 账号把本地 &#x2F;ab 目录下所有文件传送到 192.168.0.100远程主机的&#x2F;root 目录。</p>
-<p>scp <a href="mailto:&#114;&#111;&#x6f;&#x74;&#x40;&#x31;&#57;&#50;&#x2e;&#49;&#54;&#56;&#x2e;&#48;&#x2e;&#49;&#48;&#48;">&#114;&#111;&#x6f;&#x74;&#x40;&#x31;&#57;&#50;&#x2e;&#49;&#54;&#56;&#x2e;&#48;&#x2e;&#49;&#48;&#48;</a>:&#x2F;root&#x2F;abc  &#x2F;root&#x2F;a   用 root 账号把远程主机 192.168.0.100 上的文件 &#x2F;root&#x2F;abc 传送到本地主机&#x2F;root 目录下，并改名为 a</p>
+<p>scp &#x2F;root&#x2F;a  <a href="mailto:&#x72;&#x6f;&#x6f;&#116;&#64;&#49;&#57;&#50;&#46;&#x31;&#54;&#56;&#x2e;&#x30;&#x2e;&#49;&#x30;&#x30;">&#x72;&#x6f;&#x6f;&#116;&#64;&#49;&#57;&#50;&#46;&#x31;&#54;&#56;&#x2e;&#x30;&#x2e;&#49;&#x30;&#x30;</a>:&#x2F;root&#x2F;b  (用 root 账号把本地文件 root&#x2F;a 传送到 192.168.0.100 远程主机下的&#x2F;root 下，并改名为 b )</p>
+<p>scp &#x2F;ab&#x2F;*   <a href="mailto:&#114;&#111;&#111;&#x74;&#64;&#x31;&#x39;&#50;&#x2e;&#49;&#54;&#x38;&#46;&#x30;&#x2e;&#49;&#x30;&#48;">&#114;&#111;&#111;&#x74;&#64;&#x31;&#x39;&#50;&#x2e;&#49;&#54;&#x38;&#46;&#x30;&#x2e;&#49;&#x30;&#48;</a>:&#x2F;root    用 root 账号把本地 &#x2F;ab 目录下所有文件传送到 192.168.0.100远程主机的&#x2F;root 目录。</p>
+<p>scp <a href="mailto:&#114;&#111;&#x6f;&#116;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#x38;&#46;&#x30;&#x2e;&#x31;&#48;&#48;">&#114;&#111;&#x6f;&#116;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#x38;&#46;&#x30;&#x2e;&#x31;&#48;&#48;</a>:&#x2F;root&#x2F;abc  &#x2F;root&#x2F;a   用 root 账号把远程主机 192.168.0.100 上的文件 &#x2F;root&#x2F;abc 传送到本地主机&#x2F;root 目录下，并改名为 a</p>
 <h3 id="VNC服务配置"><a href="#VNC服务配置" class="headerlink" title="VNC服务配置"></a>VNC服务配置</h3><p>虚拟网络连接（VNC),允许用户在网络的任何地方使用简单的程序来和一个特定的计算机（服务器）进行交互。</p>
 <h3 id="vnc软件组成部分：服务端的VNC-server和客户端的VNC-viewer。（13-2）"><a href="#vnc软件组成部分：服务端的VNC-server和客户端的VNC-viewer。（13-2）" class="headerlink" title="vnc软件组成部分：服务端的VNC server和客户端的VNC viewer。（13-2）"></a>vnc软件组成部分：服务端的VNC server和客户端的VNC viewer。（13-2）</h3><h3 id="创建或更改VNC登录密码"><a href="#创建或更改VNC登录密码" class="headerlink" title="创建或更改VNC登录密码"></a>创建或更改VNC登录密码</h3><p>vncpasswd [密码文件]<br>vncpasswd [选项]</p>
 <p>创建或更改VNC登录密码</p>
