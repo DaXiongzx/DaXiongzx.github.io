@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/05/26/CNN/</loc>
+    
+    <lastmod>2022-05-27T16:12:20.994Z</lastmod>
+    
+    <date>1653577767000</date>
+    <title>CNN | DaXiong</title>
+    
+    <desc>CNN</desc>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/05/23/Backpropagation/</loc>
     
     <lastmod>2022-05-24T06:17:16.595Z</lastmod>
