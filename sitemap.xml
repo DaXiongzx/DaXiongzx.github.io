@@ -2,9 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/06/09/Attention2/</loc>
+    
+    <lastmod>2022-06-23T15:30:27.408Z</lastmod>
+    
+    <date>1654783357000</date>
+    <title>Attention2 | DaXiong</title>
+    
+    <desc>Self-Attention2</desc>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/06/11/sap-training1/</loc>
+    
+    <lastmod>2022-06-11T09:38:44.727Z</lastmod>
+    
+    <date>1654912743000</date>
+    <title>sap_training1 | DaXiong</title>
+    
+    <desc>Sap—Training</desc>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/05/29/Attention/</loc>
+    
+    <lastmod>2022-05-29T03:36:04.349Z</lastmod>
+    
+    <date>1653790842000</date>
+    <title>Attention | DaXiong</title>
+    
+    <desc>Self-Attention</desc>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/05/26/CNN/</loc>
     
-    <lastmod>2022-05-27T16:12:20.994Z</lastmod>
+    <lastmod>2022-05-27T16:18:22.815Z</lastmod>
     
     <date>1653577767000</date>
     <title>CNN | DaXiong</title>
